@@ -28,7 +28,6 @@ const options = {
     };
 
     refs.startButton.disabled = false;
-    // Notify.success('The date is correct, you can click the button to start the countdown');
 
     refs.startButton.addEventListener('click', startCountdown);
 
@@ -36,19 +35,19 @@ const options = {
       refs.startButton.disabled = true;
 
       setInterval(() => {
-        if (selectedDate < Date.now()) {
+        const currentTime = Date.now();
+
+        if (selectedDate < currentTime) {
           return;
         };
-        
-        const currentTime = Date.now();
+
         const timeDifference = selectedDate - currentTime;
         const countdown = convertMs(timeDifference);
-
+        
         refs.days.textContent = addLeadingZero(countdown.days);
         refs.hours.textContent = addLeadingZero(countdown.hours);
         refs.minutes.textContent = addLeadingZero(countdown.minutes);
         refs.seconds.textContent = addLeadingZero(countdown.seconds);
-        console.log(convertMs(timeDifference));
       }, 1000);
     };
   },

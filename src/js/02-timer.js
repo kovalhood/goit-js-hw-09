@@ -3,11 +3,12 @@ import 'flatpickr/dist/flatpickr.min.css';
 import { Notify } from 'notiflix/build/notiflix-notify-aio';
 
 const refs = {
-    days: document.querySelector('span[data-days]'),
-    hours: document.querySelector('span[data-hours]'),
-    minutes: document.querySelector('span[data-minutes]'),
-    seconds: document.querySelector('span[data-seconds]'),
-    startButton:document.querySelector('button[data-start]')
+  datetimePicker: document.querySelector('input#datetime-picker'),
+  startButton: document.querySelector('button[data-start]'),
+  days: document.querySelector('span[data-days]'),
+  hours: document.querySelector('span[data-hours]'),
+  minutes: document.querySelector('span[data-minutes]'),
+  seconds: document.querySelector('span[data-seconds]'),
 };
 
 refs.startButton.disabled = true;
@@ -32,6 +33,7 @@ const options = {
     refs.startButton.addEventListener('click', startCountdown);
 
     function startCountdown() {
+      refs.datetimePicker.disabled = true;
       refs.startButton.disabled = true;
 
       setInterval(() => {

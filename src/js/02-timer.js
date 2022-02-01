@@ -27,19 +27,22 @@ const options = {
       refs.startButton.disabled = true;
       return;
     };
-
+    
     refs.startButton.disabled = false;
+    let intervalId = null;
 
     refs.startButton.addEventListener('click', startCountdown);
 
     function startCountdown() {
-      refs.datetimePicker.disabled = true;
       refs.startButton.disabled = true;
+      refs.datetimePicker.disabled = true;
 
-      setInterval(() => {
+      intervalId = setInterval(() => {
         const currentTime = Date.now();
 
         if (selectedDate < currentTime) {
+          clearInterval(intervalId);
+          refs.datetimePicker.disabled = false;
           return;
         };
 

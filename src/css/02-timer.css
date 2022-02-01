@@ -1,0 +1,51 @@
+.date-picking {
+  display: flex;
+  justify-content: center;
+  margin-top: 60px;
+}
+
+button[data-start] {
+  margin-left: 30px;
+  padding: 6px 24px;
+
+  font-size: 15px;
+  font-weight: 700;
+
+  cursor: pointer;
+}
+
+.timer {
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0 30px;
+
+  width: 100px;
+  height: 100px;
+  border-radius: 4px;
+
+  background-color: #03102d;
+}
+
+.value {
+  margin: -5px 0;
+
+  font-size: 36px;
+  font-weight: 700;
+
+  color: white;
+}
+
+.label {
+  font-size: 14px;
+  font-weight: 300;
+
+  color: rgba(255, 255, 255, 0.7);
+}

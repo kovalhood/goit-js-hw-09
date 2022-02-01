@@ -42,12 +42,12 @@ const options = {
         };
 
         const timeDifference = selectedDate - currentTime;
-        const countdown = convertMs(timeDifference);
+        const { days, hours, minutes, seconds } = convertMs(timeDifference);
         
-        refs.days.textContent = addLeadingZero(countdown.days);
-        refs.hours.textContent = addLeadingZero(countdown.hours);
-        refs.minutes.textContent = addLeadingZero(countdown.minutes);
-        refs.seconds.textContent = addLeadingZero(countdown.seconds);
+        refs.days.textContent = addLeadingZero(days);
+        refs.hours.textContent = addLeadingZero(hours);
+        refs.minutes.textContent = addLeadingZero(minutes);
+        refs.seconds.textContent = addLeadingZero(seconds);
       }, 1000);
     };
   },
